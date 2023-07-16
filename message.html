@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Payment Error</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            font-size: 36px;
+            text-align: center;
+            margin-top: 150px;
+        }
+        h2 {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="text-heading">Нет!</h1>
+    <h2>Сначала заплати</h2>
+
+    <script>
+        // Получаем параметры URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const textParam = urlParams.get('text');
+
+        // Если параметр text есть в URL, обновляем содержимое заголовка
+        if (textParam) {
+            const textHeading = document.getElementById('text-heading');
+            textHeading.textContent = textParam;
+        }
+    </script>
+</body>
+</html>
